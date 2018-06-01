@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "serverless-plugin-simulate": "0.0.17"
+  }
+}
