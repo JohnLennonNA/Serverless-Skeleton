@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import json, os, sys
 
-map(lambda x: sys.path.append('.libs/' + x + '/'), os.listdir(".libs/"))
+list(map(lambda x: sys.path.append('.libs/' + x ), os.listdir(".libs/")))
 
 import requests
 
