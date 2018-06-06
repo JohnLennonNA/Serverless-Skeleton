@@ -28,5 +28,4 @@ def main(event, context):
             "body": r.content
         }
     except Exception as e:
-        e = sys.exc_info()[0]
-        print e
+        print(e.message)
