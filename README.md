@@ -1,6 +1,6 @@
 # Lambda Structure
 
-Simple project to start with lambda and serverless arquiteture
+Simple project to start with lambda and serverless arquiteture, just python for the time being
 
 ### Prerequisites
 
@@ -20,7 +20,7 @@ Simple project to start with lambda and serverless arquiteture
 
   first install the dependences of the function with:
 
-    make lib 'Service/Function'
+    make lib 'Service/Function' version=(3.6 or 2.7)
     
   after execute the command:
   
@@ -41,8 +41,7 @@ To configure credentials:
 
 and after
 
-     Make deploy 'Service/Function'
-
+     Make deploy 'Service/Function' stage=( homologation, production )
 
 ## License
 
