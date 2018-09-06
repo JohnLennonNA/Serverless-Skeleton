@@ -11,4 +11,7 @@ deploy:
 	cd Services/${ARGS}/ && serverless deploy --stage ${stage}
 
 tests:
-	docker run -it --rm --name execTest -v "$(PWD)/Tests":/app -w /app python:2.7 python -m unittest ${ARGS}Test
+	docker run -it --rm --name execTest -v "$(PWD)/Tests":/app -w /app python:${version} python -m unittest ${ARGS}Test
+
+fuck:
+	echo "fodase"

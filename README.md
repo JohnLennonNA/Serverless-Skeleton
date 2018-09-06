@@ -1,48 +1,116 @@
 # Lambda Structure
 
-Simple project to start with lambda and serverless arquiteture, just python for the time being
+One Paragraph of project description goes here
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
    - Docker 
    - NPM
    - Make (Unix)
-   
+
 ### Installing
 
-        npm install -g serverless
-        npm i --save-dev serverless-plugin-simulate
-        
-  After to install this app's you need to generate the env file, select your service and rename the 
-  'env.yml.dist' to 'env.yml'
+A step by step series of examples that tell you have to get a development env running
 
-### Building
+Say what the step will be
 
-  first install the dependences of the function with:
+    npm install -g serverless
+    npm i --save-dev serverless-plugin-simulate
 
-    make lib 'Service/Function' version=(3.6 or 2.7)
-    
-  after execute the command:
-  
-    make up 'Service/Function'
+End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
-TODO!
+Explain how to run the automated tests for this system
+
+### Break down into end to end tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+### And coding style tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
 
 ## Deployment
 
-The deploy is based in Serverless framework, but i maked a simple command to abstract this
+Add additional notes about how to deploy this on a live system
+
+## Built With
+
+* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+* [Maven](https://maven.apache.org/) - Dependency Management
+* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+
+## Authors
+
+* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* Hat tip to anyone who's code was used
+* Inspiration
+* etc
+
+
+
+
+
+
+
+
+
+
+#### REQUIREMENSTs'
+
+#### REQUIREMENSTs'
+
+   - Docker 
+   - NPM
+    
+#### INSTALL TO START
+   
+        apt-get install npm
+        npm install -g serverless
+        npm i --save-dev serverless-plugin-simulate
+        sudo apt-get install make
+   
+#### INSTALL LIBS BY SERVICE
+    
+    make lib Service/Function
+
+#### START LOCAL SERVICE 
+
+    make up Service/Function
+      
+#### DEPLOY
 
 To configure credentials: 
     
      serverless config credentials --provider aws --key YOURKEYHERE --secret YOURSECRET
      make deploy Service/Function
-
-and after
-
-     Make deploy 'Service/Function' stage=( homologation, production )
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
