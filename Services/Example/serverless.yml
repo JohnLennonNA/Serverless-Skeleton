@@ -1,0 +1,40 @@
+service: Example
+frameworkVersion: ">=1.0.0 <2.0.0"
+
+provider:
+  name: aws
+  stage: ${opt:stage, 'development'}
+  region: ${opt:region, 'sa-east-1'}
+  runtime: python3.6
+  deploymentBucket:
+    name: mservices.lambda
+
+functions:
+  Example:
+    name: ${self:service}-${self:provider.stage}
+    description: "Send changes in the status to portal"
+    handler: src/main.main
+    tags:
+      domain: Notes
+    memorySize: 128
+    timeout: 60
+    environment:
+      MYSQL_HOST: ${file(config/./env.yml):${self:provider.stage}.MYSQL_HOST}
+      MYSQL_USER: ${file(config/./env.yml):${self:provider.stage}.MYSQL_USER}
+      MYSQL_PASS: ${file(config/./env.yml):${self:provider.stage}.MYSQL_PASS}
+      MYSQL_DB: ${file(config/./env.yml):${self:provider.stage}.MYSQL_DB}
+    events:
+      - http:
+          path: ${self:service}/{typeSearch}/{ID}
+          method: POST
+      - http:
+          path: ${self:service}/{typeSearch}/{ID}
+          method: GET
+      - http:
+          path: ${self:service}/{typeSearch}/cnpj/{CNPJ}/number/{NUMBER}/serie/{SERIE}
+          method: GET
+    cors:
+      - enabled: true
+
+plugins:
+  - serverless-plugin-simulate
